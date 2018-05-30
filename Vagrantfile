@@ -8,7 +8,7 @@ git_branch = `git rev-parse --abbrev-ref HEAD`.strip
 if(git_branch == "master") then
   git_branch = "default"
 end
-GIT_BRANCH = git_branch
+GIT_BRANCH = git_branch.gsub(/[\/]/, '_')
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
